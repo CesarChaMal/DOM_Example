@@ -1,0 +1,68 @@
+<script>
+//    var body = document.getElementsByTagName("body");
+//    var firstChild = grid.firstChild;
+    function checa(){
+        var body = document.getElementsByTagName("body");
+        var div = document.getElementById("secondary");
+        var script = document.createElement("script");
+        script.text="alert('Hola')";
+        //script.innerHTML="alert('Hola')";
+/*
+        alert(script.nodeValue);
+        alert(script.nodeName);
+        alert(script.text);
+        alert(script.innerHTML);
+        alert(script.id);
+*/        
+        body[0].appendChild(script);
+
+        var text = document.createTextNode("sad");
+        var span = document.getElementById("span");
+        var spanFirstChild = span.firstChild;
+        //alert(text.nodeValue);
+        text.nodeValue="Ceasa";
+/*
+        alert(spanFirstChild.nodeValue);
+        alert(spanFirstChild.nodeName);
+        alert(spanFirstChild.text);
+        alert(spanFirstChild.innerHTML);
+        alert(spanFirstChild.id);
+*/
+        span.removeChild(spanFirstChild);
+        span.appendChild(text);
+        //span.replaceChild(text,spanFirstChild);
+
+        
+        var script2 = "text.nodeValue='Cesadassaeasa'; \n\r";
+        alert(script2);
+        eval(script2);
+        
+
+        var script3 = document.createElement("script");
+        script3.text="text2 = document.createTextNode('Cesar Chavez'); \n\r";
+        script3.text+="var span2 = document.getElementById('span'); \n\r";
+        script3.text+="span2.replaceChild(text2,span.firstChild); \n\r"
+        alert(script3.text);
+        //eval(script3.text);
+        body[0].appendChild(script3);
+
+        var script4 = document.createElement("script");
+        script4.text="text2 = document.createTextNode('Cesar Franicisco Chavez Maldonado  '); \n\r";
+        script4.text+="var div = document.getElementById('secondary'); \n\r";
+        script4.text+="div.replaceChild(text2,div.firstChild); \n\r"
+        alert(script4.text);
+        //eval(script3.text);
+        //body[0].appendChild(script4);
+        body[0].replaceChild(script4,document.getElementById("main"));
+    }
+</script>
+<body>
+    <div id="main">
+        <input type="button" onclick="checa()">
+    </div>
+    <div id="secondary">
+        <span id="span">
+            Texto
+        </span>
+    </div>
+</body>
